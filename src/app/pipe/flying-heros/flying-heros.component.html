@@ -1,0 +1,43 @@
+<h2>{{ title }}</h2>
+<p>Create a new hero and press enter to add it to the list. </p>
+
+<hr>
+<label>New hero name: </label>
+<input type="text" #box id="hero-name" (keyup.enter)="addhero(box.value); box.value=''" placeholder='hero name'>
+
+<div>
+  <input id="can-fly" type="checkbox" [(ngModel)]="canFly">
+  <label for="can-fly">Hero can fly</label>
+</div>
+
+<div>
+  <input id="mutate" type="checkbox" [(ngModel)]="mutate">
+  <label for="mutate">Mutate array</label>
+  <button type="button" (click)="reset()">Reset list of heroes</button>
+</div>
+
+<h3>Heroes who fly (piped)</h3>
+<div id="flyers">
+  <div *ngFor="let hero of (heroes | flyingHeroes)">
+    {{hero.name}}
+  </div>
+</div>
+
+<h3>All Heroes (no pipe)</h3>
+<div id="all">
+  <div *ngFor="let hero of heroes">
+    {{hero.name}}
+  </div>
+</div>
+
+
+
+<!-- (keyup.enter)
+      Angular事件绑定event bingding语法
+      .enter: 当用户按下enter键时触发事件
+      .space: 当用户按下space空格键时触发
+      .a: 当用户按下a键时触发
+      .arrowup: 当用户按下向上箭头时触发
+      .alt: 当用户按下alt键时chufa
+      ...以此类推
+-->

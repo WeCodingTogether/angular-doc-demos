@@ -1,0 +1,15 @@
+<h2>Power Boost Caculator</h2>
+<label for="power-input">Normal power: </label>
+<input id="power-input" type="text" [(ngModel)]="power">
+<label for="boost-input">Boost factor: </label>
+<input id="boost-input" type="text" [(ngModel)]="factor">
+<p>
+  Super Hero Power: {{ power | exponentialStrength: factor }}
+</p>
+
+<!-- 这里的 for 属性的值与相应输入框的 id 属性相匹配。
+例如，for="power-input" 的 <label> 与 <input id="power-input"> 相关联，表示标签描述了 "Normal power"
+输入框。同样，for="boost-input" 的 <label> 与 <input id="boost-input"> 相关联，表示标签描述了 "Boost factor" 输入框。
+
+这种关联可以改善表单的可访问性（accessibility），让屏幕阅读器等辅助技术能够正确地将标签与表单元素相关联，从而提供更好的用户体验。
+这也是一种良好的 HTML 标准做法，使页面更容易维护和理解。 -->

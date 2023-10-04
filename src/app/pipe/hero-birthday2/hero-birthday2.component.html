@@ -1,0 +1,13 @@
+<p>hero-birthday2 works!</p>
+
+<p>The heros's birthday is {{ birthday | date:format }}</p>
+<button type="button" (click)="toggleFormat()">Toggle Format</button>
+
+<hr>
+<h2>More than 2 formats</h2>
+<p>The chained hero's birthday is {{ birthday | date:'fullDate' | uppercase}}</p>
+
+<hr>
+<p>Super power boost: {{ 3 | exponentialStrength: 10}}</p>
+
+
