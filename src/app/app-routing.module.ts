@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, RouterModule, Routes, TitleStrategy } from '@angular/router';
 import { HeroBirthday2Component } from './pipe/hero-birthday2/hero-birthday2.component';
 import { PowerBoosterComponent } from './pipe/power-booster/power-booster.component';
 import { PowerBoostCaculatorComponent } from './pipe/power-boost-caculator/power-boost-caculator.component';
@@ -17,6 +17,7 @@ import { FirstComponent } from './router/nestingroutes/first/first.component';
 import { SecondComponent } from './router/nestingroutes/second/second.component';
 import { ChildAComponent } from './router/nestingroutes/child-a/child-a.component';
 import { ChildBComponent } from './router/nestingroutes/child-b/child-b.component';
+import { TemplatePageTitleStrategy } from './utility/template-page-title-strategy';
 
 const routes: Routes = [
   { path:'', redirectTo:'/hero-birthday2', pathMatch:'full'},
@@ -32,20 +33,21 @@ const routes: Routes = [
   { path:'hero-list', component: HeroListComponent},
   { path:'viewchild', component: ViewchildComponent },
   { path:'activated-route', component:ActivatedRouteComponent },
-  { path:'first', component: FirstComponent,
-    children: [{ path:'child-a', component: ChildAComponent },
-               { path:'child-b', component: ChildBComponent },
+  { path:'first', component: FirstComponent, title: 'Router Demos',
+    children: [{ path:'child-a', component: ChildAComponent, title: 'Child a' },
+               { path:'child-b', component: ChildBComponent, title: 'Child b' },
               ],
   },
-  { path:'second', component: SecondComponent },
-
-
+  { path:'second', component: SecondComponent, title:'Second Component' },
   { path:'**', component:PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+  { provide: TitleStrategy, useClass: TemplatePageTitleStrategy},
+  ]
 })
 export class AppRoutingModule { }
 
