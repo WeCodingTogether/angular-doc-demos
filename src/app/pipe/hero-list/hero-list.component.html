@@ -1,0 +1,13 @@
+<h2>Heroes fron JSON file</h2>
+<div *ngFor="let hero of ('assets/heroes.json' | fetch)">
+  {{ hero.name }}
+</div>
+
+<p>Heroes as JSON:
+  {{ 'assets/heroes.json' | fetch | json}}
+</p>
+
+<!-- 管道的优先级 precedence 高于三元运算符 ternary oprator，三目运算符需要使用管道的话需要括号包起来 -->
+<span> {{ true ? 'true' : 'false' | uppercase}}</span>
+<span> {{ (true ? 'true' : 'false') | uppercase}}</span>
+<span> {{ false ? 'true' : 'false' | uppercase}}</span>

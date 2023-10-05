@@ -15,6 +15,11 @@ import { GeolocationComponent } from './observableObj/geolocation/geolocation.co
 import { NumberObservableComponent } from './observableObj/number-observable/number-observable.component';
 import { MulticastingDemoComponent } from './observableObj/multicasting-demo/multicasting-demo.component';
 import { MulticastingArrayDemoComponent } from './observableObj/multicasting-array-demo/multicasting-array-demo.component';
+import { HeroAsyncMessageComponent } from './pipe/hero-async-message/hero-async-message.component';
+import { FetchJsonPipe } from './pipe/fetch-json.pipe';
+import { HeroListComponent } from './pipe/hero-list/hero-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Pane, ViewchildComponent } from './api/viewchild/viewchild.component'
 
 @NgModule({
   declarations: [
@@ -31,11 +36,17 @@ import { MulticastingArrayDemoComponent } from './observableObj/multicasting-arr
     NumberObservableComponent,
     MulticastingDemoComponent,
     MulticastingArrayDemoComponent,
+    HeroAsyncMessageComponent,
+    FetchJsonPipe,
+    HeroListComponent,
+    ViewchildComponent,
+    Pane
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

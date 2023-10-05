@@ -8,6 +8,9 @@ import { FlyingHeroesImpureComponent } from './pipe/flying-heroes-impure/flying-
 import { NumberObservableComponent } from './observableObj/number-observable/number-observable.component';
 import { MulticastingDemoComponent } from './observableObj/multicasting-demo/multicasting-demo.component';
 import { MulticastingArrayDemoComponent } from './observableObj/multicasting-array-demo/multicasting-array-demo.component';
+import { HeroAsyncMessageComponent } from './pipe/hero-async-message/hero-async-message.component';
+import { HeroListComponent } from './pipe/hero-list/hero-list.component';
+import { ViewchildComponent } from './api/viewchild/viewchild.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/hero-birthday2', pathMatch:'full'},
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path:'flying-heros-impure', component: FlyingHeroesImpureComponent },
   { path:'number-observable', component: NumberObservableComponent },
   { path:'multicasting-demo', component: MulticastingDemoComponent},
-  { path:"multicasting-array-demo", component: MulticastingArrayDemoComponent}
+  { path:"multicasting-array-demo", component: MulticastingArrayDemoComponent},
+  { path: 'hero-async-message', component: HeroAsyncMessageComponent},
+  { path:'hero-list', component: HeroListComponent},
+  { path:'viewchild', component: ViewchildComponent },
 ];
 
 @NgModule({

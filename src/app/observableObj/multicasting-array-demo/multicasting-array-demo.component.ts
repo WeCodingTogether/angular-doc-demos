@@ -46,6 +46,7 @@ export class MulticastingArrayDemoComponent {
 
     // return the subscriber function
     // runs when sunscribe() function is invoked
+    // 下面是添加多个observer观察者
     return (observer: Observer<unknown>) => {
               observers.push(observer);
               if(observers.length ===1) {
