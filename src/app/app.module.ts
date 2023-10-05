@@ -19,7 +19,13 @@ import { HeroAsyncMessageComponent } from './pipe/hero-async-message/hero-async-
 import { FetchJsonPipe } from './pipe/fetch-json.pipe';
 import { HeroListComponent } from './pipe/hero-list/hero-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { Pane, ViewchildComponent } from './api/viewchild/viewchild.component'
+import { Pane, ViewchildComponent } from './api/viewchild/viewchild.component';
+import { ActivatedRouteComponent } from './router/activated-route/activated-route.component';
+import { PageNotFoundComponent } from './utility/page-not-found/page-not-found.component';
+import { FirstComponent } from './router/nestingroutes/first/first.component';
+import { SecondComponent } from './router/nestingroutes/second/second.component';
+import { ChildAComponent } from './router/nestingroutes/child-a/child-a.component';
+import { ChildBComponent } from './router/nestingroutes/child-b/child-b.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { Pane, ViewchildComponent } from './api/viewchild/viewchild.component'
     FetchJsonPipe,
     HeroListComponent,
     ViewchildComponent,
-    Pane
+    Pane,
+    ActivatedRouteComponent,
+    PageNotFoundComponent,
+    FirstComponent,
+    SecondComponent,
+    ChildAComponent,
+    ChildBComponent
   ],
   imports: [
     BrowserModule,
